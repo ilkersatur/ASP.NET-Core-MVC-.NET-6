@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Models.Urun
+<h2>Ürün Ekle</h2>
+<form asp-action="UrunEkle" method="post" >
+    <table>
+        <tr>
+            <td></td>
+            <td> <input type="text" asp-for="UrunAdi"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            @*<td> <input type="text" asp-for="KategoriID"> </td>*@
+            <td> 
+                <select asp-for="KategoriID" asp-items="@ViewBag.Kategoriler">
+                    <option>Please select one</option>
+                </select> 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="text" asp-for="Fiyat"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="submit" value="Kaydet"></td>
+        </tr>
+    </table>
+</form>
+@*@Html.TextBoxFor(m=>m.UrunID)*@

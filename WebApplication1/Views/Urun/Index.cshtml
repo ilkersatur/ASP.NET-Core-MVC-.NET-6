@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApplication1.Models.Urun>
+
+@*<h1>Merhaba MVC CORE</h1>*@
+@*@ViewData["mesaj1"]
+@ViewBag.Mesaj2*@
+
+<!--1.Yöntem-TAG-->
+<a href="~/Urun/UrunEkle">Yeni Ürün Ekle</a>
+<!--2.Yöntem-HTML Helper-->
+@Html.ActionLink("Urun Ekle","UrunEkle")
+<!--3.Yöntem-TAG HELPER-->
+<a asp-action="UrunEkle" asp-controller="Urun">Yeni Ürün Ekle Tag Helper</a>
+<h5>Urunler Listesi</h5>
+<table border="1px">
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.UrunID</td>
+        <td>@item.UrunAdi</td>
+        <td>@item.KategoriID</td>
+        <td>@item.Fiyat</td>
+    </tr>
+}
+</table>
+
+<style>
+    tr:nth-child(even){
+    background-color: #B22222;
+    color:aliceblue;
+    }
+    h5{
+        color:chocolate;
+    }
+</style>
+<br />
